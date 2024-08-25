@@ -2,7 +2,7 @@
 ### Installation
 1. Download repository. We call this directory as `ROOT`:
 ```
-$ git clone https://github.com/dongkwonjin/RVLD.git
+$ git clone https://github.com/Alex-1337/LaneTCA.git
 ```
 
 2. Download [pre-trained model](https://drive.google.com/file/d/1PjbN2uQ-7DgFJjApH1vRx81vEo_Tvn-9/view?usp=sharing) parameters and [preprocessed data](https://drive.google.com/file/d/14JI2BIwJ677_rCBLGQiHvl6IF-n0LIwH/view?usp=sharing) in `ROOT`:
@@ -13,8 +13,8 @@ $ unzip preprocessing.zip
 ```
 4. Create conda environment:
 ```
-$ conda create -n RVLD python=3.7 anaconda
-$ conda activate RVLD
+$ conda create -n LaneTCA python=3.7 anaconda
+$ conda activate LaneTCA
 ```
 4. Install dependencies:
 ```
@@ -38,14 +38,9 @@ Download [OpenLane-V](https://drive.google.com/file/d/1Jf7g1EG2oL9uVi9a1Fk80Iqtd
     │   └── ...                 # etc.
     ├── Modeling                # directory for modeling
     │   ├── VIL-100             # dataset name (VIL-100, OpenLane-V)
-    |   |   ├── ILD_seg         # a part of ILD for predicting lane probability maps
-    |   |   |   ├── code
-    |   |   ├── ILD_coeff       # a part of ILD for predicting lane coefficient maps
-    |   |   |   ├── code
-    |   |   ├── PLD             # PLD
-    |   |   |   ├── code
+    |   |   ├── code            
     │   ├── OpenLane-V           
-    |   |   ├── ...             # etc.
+    |   |   ├── code            
     ├── pretrained              # pretrained model parameters 
     │   ├── VIL-100              
     │   ├── OpenLane-V            
@@ -72,32 +67,32 @@ Download [OpenLane-V](https://drive.google.com/file/d/1Jf7g1EG2oL9uVi9a1Fk80Iqtd
     |   └── ...
     
 ### Evaluation (for VIL-100)
-To test on VIL-100, you need to install official CULane evaluation tools. The official metric implementation is available [here](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md). Please downloads the tools into `ROOT/Modeling/VIL-100/MODEL_NAME/code/evaluation/culane/`. Then, you compile the evaluation tools. We recommend to see an [installation guideline](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md).
+To test on VIL-100, you need to install official CULane evaluation tools. The official metric implementation is available [here](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md). Please downloads the tools into `ROOT/Modeling/VIL-100/code/evaluation/culane/`. Then, you compile the evaluation tools. We recommend to see an [installation guideline](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md).
 ```
-$ cd ROOT/Modeling/VIL-100/MODEL_NAME/code/evaluation/culane/
+$ cd ROOT/Modeling/VIL-100/code/evaluation/culane/
 $ make
 ```
 
 ### Train
-1. Set the dataset you want to train on (`DATASET_NAME`). Also, set the model (ILD or PLD) you want to train (`MODEL_NAME`).
+1. Set the dataset you want to train on (`DATASET_NAME`).
 2. Parse your dataset path into the `-dataset_dir` argument.
 3. Edit `config.py` if you want to control the training process in detail
 ```
-$ cd ROOT/Modeling/DATASET_NAME/MODEL_NAME/code/
+$ cd ROOT/Modeling/DATASET_NAME/code/
 $ python main.y --run_mode train --pre_dir ROOT/preprocessed/DATASET_NAME/ --dataset_dir /where/is/your/dataset/path 
 ```
  
 ### Test
-1. Set the dataset you want to train on (`DATASET_NAME`). Also, set the model (ILD or PLD) you want to train (`MODEL_NAME`).
+1. Set the dataset you want to train on (`DATASET_NAME`).
 2. Parse your dataset path into the `-dataset_dir` argument.
 3. If you want to get the performances of our work,
 ```
-$ cd ROOT/Modeling/DATASET_NAME/MODEL_NAME/code/
+$ cd ROOT/Modeling/DATASET_NAME/code/
 $ python main.y --run_mode test_paper --pre_dir ROOT/preprocessed/DATASET_NAME/ --paper_weight_dir ROOT/pretrained/DATASET_NAME/ --dataset_dir /where/is/your/dataset/path
 ```
 4. If you want to evaluate a model you trained,
 ```
-$ cd ROOT/Modeling/DATASET_NAME/MODEL_NAME/code/
+$ cd ROOT/Modeling/DATASET_NAME/code/
 $ python main.y --run_mode test --pre_dir ROOT/preprocessed/DATASET_NAME/ --dataset_dir /where/is/your/dataset/path
 ```
 5. (optional) If you set `disp_test_result=True` in code/options/config.py file, you can visualize the detection results.
