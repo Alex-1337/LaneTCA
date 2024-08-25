@@ -85,15 +85,19 @@ $ cd ROOT/Modeling/DATASET_NAME/code/
 $ python main.y --run_mode test --pre_dir ROOT/preprocessed/DATASET_NAME/ --dataset_dir /your_dataset_path 
 ```
 
-### Evaluation (for VIL-100)
+### Evaluation (on VIL-100)
 To evaluate on VIL-100, you’ll need to install the official CULane evaluation tools. The official metric implementation is available [here](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md). Download the tools into `ROOT/Modeling/VIL-100/code/evaluation/culane/` and compile them. We recommend to see an [installation guideline](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md).
 ```
 $ cd ROOT/Modeling/VIL-100/code/evaluation/culane/
 $ make
 ```
 
+### :wrench: Pretrained model
+you can download our pretrained model on VIL-100 here, and on OpenLane-V here.
+
+
 ### :bookmark_tabs: Preprocessing
-You can obtain the preprocessed data, by running the codes in Preprocessing directories. Data preprocessing is divided into several steps. Below we describe each step in detail.
+You can obtain the preprocessed data by running the code in the Preprocessing directories. The data preprocessing is divided into several steps, each of which is described in detail below.
 1. In P00, the type of ground-truth lanes in a dataset is converted to pickle format. (only for VIL-100)
 2. In P01, each lane in a training set is represented by 2D points sampled uniformly in the vertical direction.
 3. In P02, a lane matrix is constructed and SVD is performed. Then, each lane is transformed into its coefficient vector.
