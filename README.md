@@ -41,14 +41,9 @@ Download [OpenLane-V](https://drive.google.com/file/d/1Jf7g1EG2oL9uVi9a1Fk80Iqtd
     │   └── ...                 # etc.
     ├── Modeling                # directory for modeling
     │   ├── VIL-100             # dataset name (VIL-100, OpenLane-V)
-    |   |   ├── ILD_seg         # a part of ILD for predicting lane probability maps
-    |   |   |   ├── code
-    |   |   ├── ILD_coeff       # a part of ILD for predicting lane coefficient maps
-    |   |   |   ├── code
-    |   |   ├── PLD             # PLD
-    |   |   |   ├── code
+    |   |   ├── code            
     │   ├── OpenLane-V           
-    |   |   ├── ...             # etc.
+    |   |   ├── code            
     ├── pretrained              # pretrained model parameters 
     │   ├── VIL-100              
     │   ├── OpenLane-V            
@@ -75,9 +70,9 @@ Download [OpenLane-V](https://drive.google.com/file/d/1Jf7g1EG2oL9uVi9a1Fk80Iqtd
     |   └── ...
     
 ### Evaluation (for VIL-100)
-To evaluate on VIL-100, you’ll need to install the official CULane evaluation tools. The official metric implementation is available [here](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md). Download the tools into `ROOT/Modeling/VIL-100/MODEL_NAME/code/evaluation/culane/` and compile them. We recommend to see an [installation guideline](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md).
+To evaluate on VIL-100, you’ll need to install the official CULane evaluation tools. The official metric implementation is available [here](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md). Download the tools into `ROOT/Modeling/VIL-100/code/evaluation/culane/` and compile them. We recommend to see an [installation guideline](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md).
 ```
-$ cd ROOT/Modeling/VIL-100/MODEL_NAME/code/evaluation/culane/
+$ cd ROOT/Modeling/VIL-100/code/evaluation/culane/
 $ make
 ```
 
