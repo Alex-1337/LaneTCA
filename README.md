@@ -1,31 +1,3 @@
-# [ICCV 2023] Recursive Video Lane Detection
-
-### Dongkwon Jin, Dahyun Kim, and Chang-Su Kim
-
-
-Official implementation for **"Recursive Video Lane Detection"** [[arxiv]](https://arxiv.org/abs/2308.11106) [[paper]](https://openaccess.thecvf.com/content/ICCV2023/html/Jin_Recursive_Video_Lane_Detection_ICCV_2023_paper.html)
-
-<!--
-[[paper]](https://openaccess.thecvf.com/content/CVPR2021/papers/Jin_Harmonious_Semantic_Line_Detection_via_Maximal_Weight_Clique_Selection_CVPR_2021_paper.pdf) [[supp]](http://mcl.korea.ac.kr/~dkjin/cvpr2021/04585-supp.pdf) [[video]](https://www.youtube.com/watch?v=CFQ168_6jw8).
--->
-
-A new dataset called **"OpenLane-V"** is available at [here](https://drive.google.com/file/d/1Jf7g1EG2oL9uVi9a1Fk80Iqtd1Bvb0V7/view?usp=sharing).
-
-
-
-<img src="https://github.com/dongkwonjin/RVLD/blob/main/Overview.PNG" alt="overview" width="50%" height="50%" border="0"/>
-
-
-
-### Video
-<a href="https://www.youtube.com/watch?v=Z0FaOqVrN5w" target="_blank"><img src="https://img.youtube.com/vi/Z0FaOqVrN5w/0.jpg" alt="Video" width="30%" height="20%" /></a>     <a href="https://www.youtube.com/watch?v=rTeyZDXBW1I" target="_blank"><img src="https://img.youtube.com/vi/rTeyZDXBW1I/0.jpg" alt="Video" width="30%" height="20%" /></a>
-
-
-### Requirements
-- PyTorch >= 1.10
-- CUDA >= 10.0
-- CuDNN >= 7.6.5
-- python >= 3.6
 
 ### Installation
 1. Download repository. We call this directory as `ROOT`:
@@ -142,13 +114,4 @@ $ cd ROOT/Preprocessing/DATASET_NAME/PXX_each_preprocessing_step/code/
 $ python main.py --dataset_dir /where/is/your/dataset/path
 ```
 
-### Reference
-```
-@Inproceedings{
-    Jin2023rvld,
-    title={Recursive Video Lane Detection},
-    author={Jin, Dongkwon and Kim, Dahyun and Kim, Chang-Su},
-    booktitle={ICCV},
-    year={2023}
-}
-```
+
