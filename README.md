@@ -107,4 +107,8 @@ $ cd ROOT/Preprocessing/DATASET_NAME/PXX_each_preprocessing_step/code/
 $ python main.py --dataset_dir /your_dataset_path 
 ```
 
+## :rose: Acknowledge
+We express our gratitude to the authors for their outstanding work. [here](https://github.com/dongkwonjin/RVLD)
+
+
 
