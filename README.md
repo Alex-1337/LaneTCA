@@ -1,29 +1,32 @@
+# Getting Started
 
-### Installation
-1. Download repository. We call this directory as `ROOT`:
+### Step 1: Clone the Repository
 ```
 $ git clone https://github.com/Alex-1337/LaneTCA.git
+$ cd LaneTCA
 ```
 
-2. Download [pre-trained model](https://drive.google.com/file/d/1PjbN2uQ-7DgFJjApH1vRx81vEo_Tvn-9/view?usp=sharing) parameters and [preprocessed data](https://drive.google.com/file/d/14JI2BIwJ677_rCBLGQiHvl6IF-n0LIwH/view?usp=sharing) in `ROOT`:
+### Step 2: Download Pre-trained Models and Preprocessed Data
+Download the pre-trained model and preprocessed data into the ROOT directory:
 ```
 $ cd ROOT
 $ unzip pretrained.zip
 $ unzip preprocessing.zip
 ```
-4. Create conda environment:
+### Step 3: Set Up Environment
+Create and activate a new conda environment:
 ```
 $ conda create -n LaneTCA python=3.7 anaconda
 $ conda activate LaneTCA
 ```
-4. Install dependencies:
+### Step 4: Install Dependencies
 ```
 $ conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit=10.2 -c pytorch
 $ pip install -r requirements.txt
 ```
 Pytorch can be installed on [here](https://pytorch.org/get-started/previous-versions/). Other versions might be available as well.
 
-### Dataset
+### Step 5: Dataset Preparation
 Download [OpenLane-V](https://drive.google.com/file/d/1Jf7g1EG2oL9uVi9a1Fk80Iqtd1Bvb0V7/view?usp=sharing) into the original OpenLane dataset directory. VIL-100 can be downloaded in [here](https://github.com/yujun0-0/MMA-Net).
     
 ### Directory structure
@@ -38,9 +41,14 @@ Download [OpenLane-V](https://drive.google.com/file/d/1Jf7g1EG2oL9uVi9a1Fk80Iqtd
     │   └── ...                 # etc.
     ├── Modeling                # directory for modeling
     │   ├── VIL-100             # dataset name (VIL-100, OpenLane-V)
-    |   |   ├── code            
+    |   |   ├── ILD_seg         # a part of ILD for predicting lane probability maps
+    |   |   |   ├── code
+    |   |   ├── ILD_coeff       # a part of ILD for predicting lane coefficient maps
+    |   |   |   ├── code
+    |   |   ├── PLD             # PLD
+    |   |   |   ├── code
     │   ├── OpenLane-V           
-    |   |   ├── code            
+    |   |   ├── ...             # etc.
     ├── pretrained              # pretrained model parameters 
     │   ├── VIL-100              
     │   ├── OpenLane-V            
@@ -67,35 +75,25 @@ Download [OpenLane-V](https://drive.google.com/file/d/1Jf7g1EG2oL9uVi9a1Fk80Iqtd
     |   └── ...
     
 ### Evaluation (for VIL-100)
-To test on VIL-100, you need to install official CULane evaluation tools. The official metric implementation is available [here](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md). Please downloads the tools into `ROOT/Modeling/VIL-100/code/evaluation/culane/`. Then, you compile the evaluation tools. We recommend to see an [installation guideline](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md).
+To evaluate on VIL-100, you’ll need to install the official CULane evaluation tools. The official metric implementation is available [here](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md). Download the tools into `ROOT/Modeling/VIL-100/MODEL_NAME/code/evaluation/culane/` and compile them. We recommend to see an [installation guideline](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md).
 ```
-$ cd ROOT/Modeling/VIL-100/code/evaluation/culane/
+$ cd ROOT/Modeling/VIL-100/MODEL_NAME/code/evaluation/culane/
 $ make
 ```
 
 ### Train
-1. Set the dataset you want to train on (`DATASET_NAME`).
-2. Parse your dataset path into the `-dataset_dir` argument.
-3. Edit `config.py` if you want to control the training process in detail
+Set the dataset you want to train on (`DATASET_NAME`), and then parse your dataset path into the `-dataset_dir` argument.
 ```
 $ cd ROOT/Modeling/DATASET_NAME/code/
-$ python main.y --run_mode train --pre_dir ROOT/preprocessed/DATASET_NAME/ --dataset_dir /where/is/your/dataset/path 
+$ python main.y --run_mode train --pre_dir ROOT/preprocessed/DATASET_NAME/ --dataset_dir /your_dataset_path 
 ```
  
 ### Test
-1. Set the dataset you want to train on (`DATASET_NAME`).
-2. Parse your dataset path into the `-dataset_dir` argument.
-3. If you want to get the performances of our work,
+Set the dataset you want to train on (`DATASET_NAME`), and then parse your dataset path into the `-dataset_dir` argument.
 ```
 $ cd ROOT/Modeling/DATASET_NAME/code/
-$ python main.y --run_mode test_paper --pre_dir ROOT/preprocessed/DATASET_NAME/ --paper_weight_dir ROOT/pretrained/DATASET_NAME/ --dataset_dir /where/is/your/dataset/path
+$ python main.y --run_mode test --pre_dir ROOT/preprocessed/DATASET_NAME/ --dataset_dir /your_dataset_path 
 ```
-4. If you want to evaluate a model you trained,
-```
-$ cd ROOT/Modeling/DATASET_NAME/code/
-$ python main.y --run_mode test --pre_dir ROOT/preprocessed/DATASET_NAME/ --dataset_dir /where/is/your/dataset/path
-```
-5. (optional) If you set `disp_test_result=True` in code/options/config.py file, you can visualize the detection results.
 
 ### Preprocessing
 You can obtain the preprocessed data, by running the codes in Preprocessing directories. Data preprocessing is divided into several steps. Below we describe each step in detail.
@@ -106,7 +104,7 @@ You can obtain the preprocessed data, by running the codes in Preprocessing dire
 
 ```
 $ cd ROOT/Preprocessing/DATASET_NAME/PXX_each_preprocessing_step/code/
-$ python main.py --dataset_dir /where/is/your/dataset/path
+$ python main.py --dataset_dir /your_dataset_path 
 ```
 
 
