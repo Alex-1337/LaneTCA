@@ -93,7 +93,7 @@ $ make
 ```
 
 ### :wrench: Pretrained model
-you can download our pretrained model here https://pan.baidu.com/s/1_q-AZOGyabeFoY4Q_aq3vg?pwd=6nak (code:6nak).
+you can download our pretrained model [here](https://pan.baidu.com/s/1_q-AZOGyabeFoY4Q_aq3vg?pwd=6nak) (code:6nak).
 
 ### :bookmark_tabs: Preprocessing
 You can obtain the preprocessed data by running the code in the Preprocessing directories. The data preprocessing is divided into several steps, each of which is described in detail below.
