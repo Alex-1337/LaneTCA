@@ -1,4 +1,6 @@
-# Getting Started
+# LaneTCA
+
+## :postal_horn: Getting Started
 
 ### Step 1: Clone the Repository
 ```
@@ -68,13 +70,6 @@ Download [OpenLane-V](https://drive.google.com/file/d/1Jf7g1EG2oL9uVi9a1Fk80Iqtd
     │   ├── JPEGImages          # Original images
     │   ├── Annotations         # We do not use this directory
     |   └── ...
-    
-### Evaluation (for VIL-100)
-To evaluate on VIL-100, you’ll need to install the official CULane evaluation tools. The official metric implementation is available [here](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md). Download the tools into `ROOT/Modeling/VIL-100/code/evaluation/culane/` and compile them. We recommend to see an [installation guideline](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md).
-```
-$ cd ROOT/Modeling/VIL-100/code/evaluation/culane/
-$ make
-```
 
 ### Train
 Set the dataset you want to train on (`DATASET_NAME`), and then parse your dataset path into the `-dataset_dir` argument.
@@ -90,7 +85,14 @@ $ cd ROOT/Modeling/DATASET_NAME/code/
 $ python main.y --run_mode test --pre_dir ROOT/preprocessed/DATASET_NAME/ --dataset_dir /your_dataset_path 
 ```
 
-### Preprocessing
+### Evaluation (for VIL-100)
+To evaluate on VIL-100, you’ll need to install the official CULane evaluation tools. The official metric implementation is available [here](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md). Download the tools into `ROOT/Modeling/VIL-100/code/evaluation/culane/` and compile them. We recommend to see an [installation guideline](https://github.com/yujun0-0/MMA-Net/blob/main/INSTALL.md).
+```
+$ cd ROOT/Modeling/VIL-100/code/evaluation/culane/
+$ make
+```
+
+### :bookmark_tabs: Preprocessing
 You can obtain the preprocessed data, by running the codes in Preprocessing directories. Data preprocessing is divided into several steps. Below we describe each step in detail.
 1. In P00, the type of ground-truth lanes in a dataset is converted to pickle format. (only for VIL-100)
 2. In P01, each lane in a training set is represented by 2D points sampled uniformly in the vertical direction.
