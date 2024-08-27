@@ -111,6 +111,24 @@ $ cd ROOT/Modeling/VIL-100/code/evaluation/culane/
 $ make
 ```
 
+
+## :green_book: Citation
+
+If you find our work useful for your application, please cite the following:
+```
+@misc{zhou2024lanetcaenhancingvideolane,
+      title={LaneTCA: Enhancing Video Lane Detection with Temporal Context Aggregation}, 
+      author={Keyi Zhou and Li Li and Wengang Zhou and Yonghui Wang and Hao Feng and Houqiang Li},
+      year={2024},
+      eprint={2408.13852},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2408.13852}, 
+}
+```
+
+
+
 ## :wrench: Pretrained model
 you can download our pretrained model [here](https://pan.baidu.com/s/1_q-AZOGyabeFoY4Q_aq3vg?pwd=6nak) (code:6nak).
 
