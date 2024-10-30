@@ -15,7 +15,7 @@ $ cd LaneTCA
 ```
 
 ### Step 2: Download Pre-trained Models and Preprocessed Data
-Download the pre-trained model and preprocessed data into the ROOT directory:
+Download the [pre-trained model](https://drive.google.com/file/d/1PjbN2uQ-7DgFJjApH1vRx81vEo_Tvn-9/view) and [preprocessed data](https://drive.google.com/file/d/14JI2BIwJ677_rCBLGQiHvl6IF-n0LIwH/view) into the ROOT directory:
 ```
 $ cd ROOT
 $ unzip pretrained.zip
@@ -129,8 +129,8 @@ If you find our work useful for your application, please cite the following:
 
 
 
-## :wrench: Pretrained model
-you can download our pretrained model [here](https://pan.baidu.com/s/1_q-AZOGyabeFoY4Q_aq3vg?pwd=6nak) (code:6nak).
+## :wrench: Model weights
+you can download our model weights [here](https://pan.baidu.com/s/1_q-AZOGyabeFoY4Q_aq3vg?pwd=6nak) (code:6nak).
 
 
 ## :rose: Acknowledge
