@@ -14,11 +14,10 @@ $ git clone https://github.com/Alex-1337/LaneTCA.git
 $ cd LaneTCA
 ```
 
-### Step 2: Download Pre-trained Models and Preprocessed Data
-Download the [pre-trained model](https://drive.google.com/file/d/1PjbN2uQ-7DgFJjApH1vRx81vEo_Tvn-9/view) and [preprocessed data](https://drive.google.com/file/d/14JI2BIwJ677_rCBLGQiHvl6IF-n0LIwH/view) into the ROOT directory:
+### Step 2: Download Preprocessed Data
+Download the [preprocessed data](https://drive.google.com/file/d/14JI2BIwJ677_rCBLGQiHvl6IF-n0LIwH/view) into the ROOT directory:
 ```
 $ cd ROOT
-$ unzip pretrained.zip
 $ unzip preprocessing.zip
 ```
 ### Step 3: Set Up Environment
@@ -128,13 +127,16 @@ If you find our work useful for your application, please cite the following:
 ```
 
 
-
 ## :wrench: Model weights
-you can download our model weights [here](https://pan.baidu.com/s/1_q-AZOGyabeFoY4Q_aq3vg?pwd=6nak) (code:6nak).
+You can download our model weights [here](https://pan.baidu.com/s/1_q-AZOGyabeFoY4Q_aq3vg?pwd=6nak) (code:6nak) into the ROOT directory:
 
+```
+$ cd ROOT
+$ unzip pretrained.zip
+```
 
 ## :rose: Acknowledge
-We express our gratitude to the authors for their outstanding work. [Recursive Video Lane Detection](https://github.com/dongkwonjin/RVLD)
+We express our gratitude to the authors for their outstanding work [Recursive Video Lane Detection](https://github.com/dongkwonjin/RVLD).
 
 
 
