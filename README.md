@@ -93,14 +93,14 @@ $ python main.py --dataset_dir /your_dataset_path
 Set the dataset you want to train on (`DATASET_NAME`), and then parse your dataset path into the `-dataset_dir` argument.
 ```
 $ cd ROOT/Modeling/DATASET_NAME/code/
-$ python main.y --run_mode train --pre_dir ROOT/preprocessed/DATASET_NAME/ --dataset_dir /your_dataset_path 
+$ python main.py --run_mode train --pre_dir ROOT/preprocessed/DATASET_NAME/ --dataset_dir /your_dataset_path 
 ```
  
 ## Test
 Set the dataset you want to train on (`DATASET_NAME`), and then parse your dataset path into the `-dataset_dir` argument.
 ```
 $ cd ROOT/Modeling/DATASET_NAME/code/
-$ python main.y --run_mode test --pre_dir ROOT/preprocessed/DATASET_NAME/ --dataset_dir /your_dataset_path 
+$ python main.py --run_mode test --pre_dir ROOT/preprocessed/DATASET_NAME/ --dataset_dir /your_dataset_path 
 ```
 
 ## Evaluation (on VIL-100)
